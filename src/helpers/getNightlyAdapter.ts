@@ -1,5 +1,4 @@
 import { NightlyConnectAdapter } from '@nightlylabs/wallet-selector-polkadot'
-import { getWebsiteIcon } from './getWebsiteIcon'
 
 // In the case of the optional library, types are not available
 let _adapter: any | undefined
@@ -13,7 +12,7 @@ export const getNightlyConnectAdapter = async (
 
   try {
     const name = appName || window?.location.hostname
-    const icon = appIcon || (await getWebsiteIcon(window?.origin))
+    const icon = appIcon
     const description = appOrigin || window?.origin
 
     _adapter = await NightlyConnectAdapter.build(
